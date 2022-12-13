@@ -14,7 +14,7 @@ import bootstrap from '../assets/logos/bootstrapLogo.svg'
 import materialUI from '../assets/logos/materialuiLogo.svg'
 import reactHookForm from '../assets/logos/reactHookFormLogo.png'
 import sequelize from '../assets/logos/sequelizeLogo.svg'
-import jest from '../assets/logos/JestLogo.svg'
+import jest from '../assets/logos/jestLogo.svg'
 import swagger from '../assets/logos/swaggerLogo.svg'
 import postman from '../assets/logos/postmanLogo.svg'
 
