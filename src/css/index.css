@@ -14,15 +14,9 @@ body {
 }
 
 .componentContent {
-    margin: 7% 0rem 7% 0rem;
-    height: 86%;
+    padding: 7% 15% 7% 0rem;
+    height: 100%;
     align-items: center;
-    margin-right: 5rem;
-}
-
-.componentTitle {
-    border-bottom: 4px lightCoral solid;
-    padding: 0rem;
 }
 
 .projectImg {
