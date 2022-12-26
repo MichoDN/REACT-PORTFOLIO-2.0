@@ -17,6 +17,7 @@ export const DarkTheme = createTheme({
     primaryBG: '#3E3E3E',
     secondaryBG: '#181818',
     tertiaryBG: '#D0F0E0',
+    quaternaryBG: '#D0F0E010',
     primaryBorder: 'lightSeaGreen',
     text:'white'
   }

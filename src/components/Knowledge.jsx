@@ -12,7 +12,8 @@ const gridSX = {
     flexDirection: 'column',
     aspectRatio: '1/1',
     borderBottom: '3px solid',
-    borderColor: 'primaryBorder'
+    borderColor: 'primaryBorder',
+    bgcolor:'quaternaryBG'
 }
     return (
         <Stack className='componentContent'>
@@ -20,7 +21,7 @@ const gridSX = {
             <Box sx={{ overflowY: 'scroll', marginTop: '2rem' }} >
                 <Grid container sx={{ width: '51rem', p: 3 }} rowGap={6} columnGap={7}>
                     {Knowledges.map((tech) => (
-                        <Grid item key={tech.name} sx={gridSX} xs={3.4} >
+                        <Grid item key={tech.name} sx={gridSX} xs={3.4}>
                             <img src={tech.img} style={{ height: '80%', objectFit: 'contain', color:'text' }} />
                             
                             <Typography variant='h5' color='text'>{tech.name}</Typography>
