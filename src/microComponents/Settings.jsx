@@ -15,7 +15,7 @@ export const Settings = ({toggleDarkTheme}) => {
       }}
       icon={<SettingsIcon />}
     >
-      <SpeedDialAction icon={<DarkModeIcon sx={{color:'text'}}/>} onClick={toggleDarkTheme}/>
+      <SpeedDialAction icon={<DarkModeIcon/>} onClick={toggleDarkTheme}/>
     </SpeedDial>
     );
 };

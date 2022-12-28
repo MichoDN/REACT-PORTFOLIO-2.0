@@ -22,9 +22,7 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
       variant='permanent'
       open={open}
       sx={{
-        bgcolor: 'red',
         '& .MuiDrawer-paper': {
-          bgcolor: 'primaryBG',
           overflow: 'hidden',
           width: open ? '240px' : 'auto',
         }
@@ -53,7 +51,6 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
                 minHeight: 50,
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
-                color: 'text'
               }}
               onClick={() => setCurrentComp(item.name)}
             >
@@ -62,15 +59,14 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
                 mr: open ? 3 : 'auto',
                 justifyContent: 'center',
                 transform: 'scale(1.5)',
-                color: currentComp == item.name ? 'primaryBorder' : 'text'
+                color: currentComp == item.name ? 'primary.main' : ''
               }}>
                 {item.icon}
               </ListItemIcon >
               <ListItemText
                 primary={item.name}
                 sx={{
-                  display: open ? "block" : "none",
-                  color: currentComp == item.name ? 'primaryBorder' : 'text'
+                  display: open ? "block" : "none"
                 }}
               />
             </ListItemButton>

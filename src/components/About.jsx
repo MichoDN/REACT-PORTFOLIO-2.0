@@ -17,9 +17,9 @@ const About = () => {
                 variant='h3'
                 sx={{
                     borderLeft: '4px solid',
-                    borderColor: 'primaryBorder',
+                    borderColor: 'primary.main',
                     px: 3,
-                    color: 'text'
+                    color:"text.primary"
                 }}
             >
                 I'm Michael Decena, <br />
@@ -27,7 +27,7 @@ const About = () => {
                 Welcome to my portfolio.
             </Typography>
             <Stack alignItems='center' spacing={3}>
-                <Typography variant='h4' color={'text'}>SoftSkills:</Typography>
+                <Typography variant='h4' color="text.primary" >SoftSkills:</Typography>
                 <Grid container columnGap={3} rowGap={3} sx={{ p: 1 }}>
                     {softSkills.map((softSkill) => (
                         <Grid
@@ -36,11 +36,11 @@ const About = () => {
                             xs={5.8}
                             sx={{
                                 textAlign: 'center',
-                                borderLeft: '3px solid',
-                                borderColor: 'primaryBorder',
-                                bgcolor: 'tertiaryBG',
-                                boxShadow: '2px 2px 2px #82828294',
-                                p: 1
+                                borderBottom: '3px solid',
+                                borderColor:'primary.main',
+                                p: 1,
+                                bgcolor:"primary.lowContrast",
+                                color:"text.primary"
                             }}
                         >
                             {softSkill}

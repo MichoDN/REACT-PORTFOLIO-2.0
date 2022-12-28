@@ -7,8 +7,8 @@ const ComponentTitle = ({ label }) => {
     variant='h2' 
       sx={{
         borderBottom:' 4px solid',
-        borderColor:'primaryBorder',
-        color:'text'
+        borderColor:'primary.main',
+        color:"text.primary"
       }}
     >
       {label}

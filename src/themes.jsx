@@ -2,23 +2,31 @@ import { createTheme } from "@mui/material";
 
 export const MainTheme = createTheme({
   palette: {
-    mode: 'light',
-    primaryBG: 'white ',
-    secondaryBG: '#F3F3F3',
-    tertiaryBG: '#F0D0D0',
-    primaryBorder: 'lightCoral',
-    text:'black'
+    mode: "light",
+    primary: {
+      main: "#F04F4C",
+      light: "#FA8959",
+      dark: "#DB4424",
+      lowContrast: "rgba(253, 237, 237, 0.86)"
+    },
+    text:{
+      secondary:"#3E3E3E"
+    }
   }
 })
 
 export const DarkTheme = createTheme({
   palette: {
-    mode: 'dark',
-    primaryBG: '#3E3E3E',
-    secondaryBG: '#181818',
-    tertiaryBG: '#D0F0E0',
-    quaternaryBG: '#D0F0E010',
-    primaryBorder: 'lightSeaGreen',
-    text:'white'
+    mode: "dark",
+    primary: {
+      main: "#008B7D",
+      light: "#2A91A3",
+      dark: "#086099",
+      lowContrast: "#3E3E3E"
+    },
+    text:{
+      primary:"#ffffff",
+      secondary:"rgba(253, 237, 237, 0.86)"
+    },
   }
 })
