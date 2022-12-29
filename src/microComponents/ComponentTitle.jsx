@@ -3,13 +3,15 @@ import React from 'react';
 
 const ComponentTitle = ({ label }) => {
   return (
-    <Typography 
-    variant='h2' 
+    <Typography
+      variant='h2'
       sx={{
-        borderBottom:' 4px solid',
-        borderColor:'primary.main',
-        color:"text.primary"
+        borderBottom: ' 4px solid',
+        borderColor: 'primary.main',
+        color: "text.primary",
+        fontSize: {xs:'2rem', sm:'3rem'}
       }}
+      
     >
       {label}
     </Typography>

@@ -18,7 +18,7 @@ const Knowledge = () => {
         <Stack className='componentContent'>
             <ComponentTitle label='Knowledge' />
             <Box sx={{ overflowY: 'scroll', marginTop: '2rem' }} >
-                <Grid container sx={{ width: '51rem', p: 3 }} rowGap={6} columnGap={7}>
+                <Grid container sx={{ width: {xs: "18rem", sm:"40rem", md:"51rem"}, p: 2, height:"100%" }} rowGap={6} columnGap={{xs:0, sm:7,md:5}}>
                     {Knowledges.map((tech) => (
                         <Grid
                             item
@@ -34,7 +34,9 @@ const Knowledge = () => {
                                 bgcolor:"primary.lowContrast",
                                 color:"text.primary"
                             }}
-                            xs={3.4}
+                            xs={12}
+                            sm={5}
+                            md={3.4}
                         >
                             <img src={tech.img} style={{ height: '80%', objectFit: 'contain' }} />
 

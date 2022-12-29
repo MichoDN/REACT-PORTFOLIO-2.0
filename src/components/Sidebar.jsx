@@ -1,5 +1,5 @@
 import { Box, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -7,6 +7,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import SchoolIcon from '@mui/icons-material/School';
 import EmailIcon from '@mui/icons-material/Email';
 import MenuIcon from '@mui/icons-material/Menu';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const drawerItems = [
   { name: 'ABOUT ME', icon: <AccountCircleIcon /> },
@@ -15,8 +16,12 @@ const drawerItems = [
   { name: 'CONTACT', icon: <EmailIcon /> }
 ]
 
+
 const Sidebar = ({ setCurrentComp, currentComp }) => {
+  const { width } = useWindowDimensions()
+  useEffect(() => { if (width < 1550) { setOpen(false) } }, [width])
   const [open, setOpen] = useState(false);
+  console.log(width)
   return (
     <Drawer
       variant='permanent'
@@ -35,7 +40,7 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
         my: '1rem',
         width: open ? '90%' : '100%'
       }}>
-        <IconButton onClick={() => setOpen(!open)}>
+        <IconButton onClick={() => { if (width >= 1150) { setOpen(!open) } }}>
           {open ? <ChevronLeftIcon sx={{ transform: 'scale(1.2)' }} /> : <MenuIcon sx={{ transform: 'scale(1.2)' }} />}
         </IconButton>
       </Box>
@@ -59,7 +64,7 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
                 mr: open ? 3 : 'auto',
                 justifyContent: 'center',
                 transform: 'scale(1.5)',
-                color: currentComp == item.name ? 'primary.main' : ''
+                color: currentComp == item.name && 'primary.main'
               }}>
                 {item.icon}
               </ListItemIcon >

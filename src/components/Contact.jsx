@@ -41,7 +41,7 @@ const Contact = () => {
         }
         axios.post('https://mailerapp-kjew.onrender.com/api/v1/mailer', data)
             .then((res) => { if (res) setSended(true) })
-            .catch((err) => { if (err) alert("error, please contactme by other way")})
+            .catch((err) => { if (err) alert("error, please contactme by other way") })
     }
 
     return (
@@ -49,8 +49,8 @@ const Contact = () => {
             <Stack className='componentContent' spacing={5}>
                 <ComponentTitle label='Contact' />
                 <form onSubmit={handleSubmit(submit)}>
-                    <Stack direction={'row-reverse'} columnGap={4}>
-                        <Stack sx={{ gap: '1.8rem', marginTop: '0.7rem' }}>
+                    <Stack direction={{ xs: 'column', md: 'row-reverse' }} rowGap={4} columnGap={4}>
+                        <Stack direction={{ xs: 'row', md: 'column' }} sx={{ gap: '1.8rem', marginTop: '0.7rem' }}>
                             <IconButton sx={iconButtonsFX} href='https://www.facebook.com/profile.php?id=100087621905116'> <FacebookIcon sx={iconsFX} /> </IconButton>
                             <IconButton sx={iconButtonsFX} href='https://www.linkedin.com/in/michael-decena/'> <LinkedInIcon sx={iconsFX} /> </IconButton>
                             <IconButton sx={iconButtonsFX} href='mailto:michaeldn03@gmail.com'> <EmailIcon sx={iconsFX} /> </IconButton>
@@ -62,14 +62,14 @@ const Contact = () => {
                             <TextField
                                 label="What is your name?"
                                 variant="filled"
-                                sx={{ width: '40rem' }}
+                                sx={{ width: { xs: '100%', sm: '40rem' } }}
                                 {...register("contact")}
                                 required
                             />
                             <TextField
                                 label="What is your email?"
                                 variant="filled"
-                                sx={{ width: '40rem' }}
+                                sx={{ width: { xs: '100%', sm: '40rem' } }}
                                 type={'email'}
                                 {...register("email")}
                                 required
@@ -77,7 +77,7 @@ const Contact = () => {
                             <TextField
                                 label="Message..."
                                 variant="filled"
-                                sx={{ width: '40rem' }}
+                                sx={{ width: { xs: '100%', sm: '40rem' } }}
                                 multiline
                                 rows={6}
                                 {...register("message")}
@@ -85,13 +85,13 @@ const Contact = () => {
                             />
 
 
-                            <Stack spacing={2} direction={'row'}>
+                            <Stack spacing={1} direction={{xs:"column",sm:"row"}}>
                                 <Autocomplete
                                     options={subjects}
                                     renderInput={(params) => <TextField {...params} label='Subject' />}
                                     value={subValue}
                                     onChange={(ev, newValue) => setSubValue(newValue)}
-                                    sx={{ flexGrow: 1 }}
+                                    sx={{ flexGrow: 1, }}
                                 />
                                 <Button variant="outlined" startIcon={<DeleteIcon />} onClick={resetValues}>
                                     Delete
