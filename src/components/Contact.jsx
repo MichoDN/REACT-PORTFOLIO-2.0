@@ -1,7 +1,7 @@
 import { Alert, Autocomplete, IconButton, Snackbar, Stack, TextField } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import Button from '@mui/material/Button';
-import React, { forwardRef, useState } from 'react';
+import React, { forwardRef, useEffect, useState } from 'react';
 
 import EmailIcon from '@mui/icons-material/Email';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -11,6 +11,7 @@ import ComponentTitle from '../microComponents/ComponentTitle';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import axios from 'axios';
+import { StyledContent } from '../themes';
 
 
 const SnackbarAlert = forwardRef(
@@ -21,6 +22,9 @@ const SnackbarAlert = forwardRef(
 
 const subjects = ["Software developer", "Other"]
 const Contact = () => {
+    const [animationAppears, setAnimationAppears] = useState(false);
+    useEffect(() => setAnimationAppears(true))
+
     const [sended, setSended] = useState(false);
     const handleSendedClose = (event, reason) => {
         if (reason === 'clickaway') return
@@ -46,7 +50,7 @@ const Contact = () => {
 
     return (
         <>
-            <Stack className='componentContent' spacing={5}>
+            <StyledContent className='componentContent' spacing={5} sx={{opacity: animationAppears && 1}}>
                 <ComponentTitle label='Contact' />
                 <form onSubmit={handleSubmit(submit)}>
                     <Stack direction={{ xs: 'column', md: 'row-reverse' }} rowGap={4} columnGap={4}>
@@ -103,7 +107,7 @@ const Contact = () => {
                         </Stack>
                     </Stack>
                 </form>
-            </Stack>
+            </StyledContent>
             <Snackbar
                 autoHideDuration={2000}
                 open={sended}

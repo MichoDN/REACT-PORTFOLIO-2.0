@@ -1,10 +1,14 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ComponentTitle from '../microComponents/ComponentTitle';
 import { Knowledges } from '../microComponents/KnowledgesList';
+import { StyledContent } from '../themes';
 
 
 const Knowledge = () => {
+    const [animationAppears, setAnimationAppears] = useState(false);
+    useEffect(() => setAnimationAppears(true))
+
     const gridSX = {
         display: 'flex',
         alignItems: 'center',
@@ -15,7 +19,7 @@ const Knowledge = () => {
         borderColor: 'primary.main'
     }
     return (
-        <Stack className='componentContent'>
+        <StyledContent className='componentContent' sx={{opacity: animationAppears && 1}}>
             <ComponentTitle label='Knowledge' />
             <Box sx={{ overflowY: 'scroll', marginTop: '2rem' }} >
                 <Grid container sx={{ width: {xs: "18rem", sm:"40rem", md:"51rem"}, p: 2, height:"100%" }} rowGap={6} columnGap={{xs:0, sm:7,md:5}}>
@@ -45,7 +49,7 @@ const Knowledge = () => {
                     ))}
                 </Grid>
             </Box>
-        </Stack>
+        </StyledContent>
     );
 };
 

@@ -1,13 +1,17 @@
 import { Grid, Stack, Typography } from '@mui/material';
 import { Projects } from '../microComponents/ProjectsList';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import ComponentTitle from '../microComponents/ComponentTitle';
+import { StyledContent } from '../themes';
 
 const Portfolio = () => {
+    const [animationAppears, setAnimationAppears] = useState(false);
+    useEffect(() => setAnimationAppears(true))
+
     const { height, width } = useWindowDimensions();
     return (
-        <Stack className='componentContent'>
+        <StyledContent className='componentContent' sx={{opacity: animationAppears && 1}}>
             <ComponentTitle label='Projects' />
             <Grid container sx={{
                 marginTop: "3rem",
@@ -38,7 +42,7 @@ const Portfolio = () => {
                     </Grid>
                 ))}
             </Grid>
-        </Stack>
+        </StyledContent>
     );
 };
 

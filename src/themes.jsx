@@ -1,4 +1,5 @@
-import { createTheme } from "@mui/material";
+import { createTheme, Stack } from "@mui/material";
+import { styled } from '@mui/material/styles';
 
 export const MainTheme = createTheme({
   palette: {
@@ -30,3 +31,9 @@ export const DarkTheme = createTheme({
     },
   }
 })
+
+
+export const StyledContent = styled(Stack)(({ theme }) => ({
+  transition: theme.transitions.create(['transform', 'opacity'], { duration: 1000 }),
+  opacity: 0
+}))

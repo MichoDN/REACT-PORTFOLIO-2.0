@@ -21,7 +21,6 @@ const Sidebar = ({ setCurrentComp, currentComp }) => {
   const { width } = useWindowDimensions()
   useEffect(() => { if (width < 1550) { setOpen(false) } }, [width])
   const [open, setOpen] = useState(false);
-  console.log(width)
   return (
     <Drawer
       variant='permanent'
